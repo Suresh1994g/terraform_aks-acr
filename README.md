@@ -2,6 +2,9 @@
 
 Terraform configuration file for provisioning an Azure Kubernetes Service and an Azure Container Registry
 
+patricks-aks-acr.tf: Provision an AKS and an ACR 
+patricks-aks-acr-backend.tf: Provision an AKS and an ACR including connection to the backend for storing StateFile in Blob Container
+
 # Sources for the Terraform File
 
 I'd like to refer to following to links, which I've used for for that example:

@@ -10,6 +10,13 @@ terraform {
       version = "3.1.0"
     }
   }
+
+  backend "azurerm" {
+    resource_group_name  = "patricksdemostorage"
+    storage_account_name = "patricksdemostorage"
+    container_name       = "microservice"
+    key                  = "microservice.state"
+  }
 }
 
 provider "azurerm" {
@@ -55,8 +62,3 @@ resource "azurerm_role_assignment" "enablePulling" {
   scope                            = azurerm_container_registry.patricks-acr.id
   skip_service_principal_aad_check = true
 }
-
-# Sources
-# https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/kubernetes_cluster
-# https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/container_registry
-# https://docs.microsoft.com/en-us/azure/container-registry/container-registry-skus
