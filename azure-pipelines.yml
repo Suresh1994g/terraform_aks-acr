@@ -6,8 +6,6 @@
 trigger:
 - main
 
-trigger: none
-
 pool:
  name: TestPool
  demands:
